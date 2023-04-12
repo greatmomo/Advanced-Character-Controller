@@ -9,13 +9,16 @@ size = Vector2(965, 66)
 [node name="World" type="Node"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(280, 224)
+position = Vector2(163, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_h73ev")
 
 [node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(-69, -391)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(280, 595)
 shape = SubResource("RectangleShape2D_m2idd")
 
 [node name="Player" parent="." instance=ExtResource("2_wc2tf")]
+position = Vector2(55, 158)
