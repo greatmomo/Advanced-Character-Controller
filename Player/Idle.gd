@@ -6,7 +6,7 @@ extends PlayerState
 func enter(_msg := {}) -> void:
 	animation_player.play("Idle")
 
-func _physics_process(delta) -> void:
+func physics_update(delta) -> void:
 	if not player.is_on_floor():
 		state_machine.transition_to("Air")
 		return

@@ -9,7 +9,7 @@ func enter(msg := {}) -> void:
 		player.velocity.y = -player.jump_impulse
 		animation_player.play("Jump")
 
-func _physics_process(delta) -> void:
+func physics_update(delta) -> void:
 	if not is_zero_approx(player.get_input_direction()):
 		player.velocity.x = lerp(player.velocity.x, player.get_input_direction() * player.speed, player.acceleration * delta)
 	else:
