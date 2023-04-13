@@ -17,3 +17,7 @@ func get_input_direction() -> float:
 		$Sprite2D.flip_h = false
 	
 	return direction
+
+func _unhandled_key_input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
