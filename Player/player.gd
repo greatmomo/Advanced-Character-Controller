@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var speed = 80
-var jump_impulse = 360
+var jump_impulse = 400
 var gravity = 1200
 var acceleration = 60
 var friction = 20

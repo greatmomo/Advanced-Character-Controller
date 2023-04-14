@@ -16,6 +16,10 @@ func physics_update(delta) -> void:
 		player.velocity.x = lerp(player.velocity.x, 0.0, player.air_friction * delta)
 	
 	player.velocity.y += player.gravity * delta
+	
+	if Input.is_action_just_released("jump") and player.velocity.y < 0:
+		player.velocity.y = 0
+	
 	player.move_and_slide()
 	
 	if player.is_on_floor():
