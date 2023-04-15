@@ -1,3 +1,4 @@
 res://world.tscn
-res://Player/Air.gd
 res://Player/player.gd
+res://Player/player.tscn
+res://Player/Air.gd

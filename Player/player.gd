@@ -8,6 +8,10 @@ var acceleration = 60
 var friction = 20
 var air_friction = 10
 
+# double jump
+@export var max_air_jumps : int
+var used_air_jumps = 0
+
 func get_input_direction() -> float:
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	

@@ -1,15 +1,15 @@
 2a60927148abd1d33b818b535e306557
-::res://::1681495660
+::res://::1681564931
 Adventurer Sprite Sheet v1.3.png::CompressedTexture2D::7516810973686122336::1681326989::1681326989::1::::<><>::
 Background.png::CompressedTexture2D::5593967988505497580::1681326954::1681326954::1::::<><>::
 icon.svg::CompressedTexture2D::8576599342672262149::1681326881::1681326891::1::::<><>::
 PlayerState.gd::GDScript::-1::1681328111::0::1::::PlayerState<>State<>::
 State.gd::GDScript::-1::1681327959::0::1::::State<>Node<>::
 StateMachine.gd::GDScript::-1::1681412921::0::1::::StateMachine<>Node<>::
-world.tscn::PackedScene::7916169557469837882::1681413520::0::1::::<><>::uid://clx03n21k3ins<>uid://8hrq84qa87rs
-::res://Player/::1681413518
-Air.gd::GDScript::-1::1681413377::0::1::::<>PlayerState<>::
+world.tscn::PackedScene::7916169557469837882::1681495813::0::1::::<><>::uid://clx03n21k3ins<>uid://8hrq84qa87rs
+::res://Player/::1681495813
+Air.gd::GDScript::-1::1681495813::0::1::::<>PlayerState<>::
 Idle.gd::GDScript::-1::1681413381::0::1::::<>PlayerState<>::
-player.gd::GDScript::-1::1681413518::0::1::::Player<>CharacterBody2D<>::
+player.gd::GDScript::-1::1681495741::0::1::::Player<>CharacterBody2D<>::
 player.tscn::PackedScene::2331745024711179548::1681329130::0::1::::<><>::uid://dfdg1p73aeia7<>res://Player/player.gd<>res://StateMachine.gd<>res://Player/Idle.gd<>res://Player/Run.gd<>res://Player/Air.gd
 Run.gd::GDScript::-1::1681413384::0::1::::<>PlayerState<>::
