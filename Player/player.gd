@@ -1,18 +1,19 @@
 extends CharacterBody2D
 class_name Player
 
-var speed = 80
-var jump_impulse = 400
-var gravity = 1200
-var acceleration = 60
-var friction = 20
-var air_friction = 10
+@export_category("movement")
+@export var speed := 80
+@export var jump_impulse := 400
+@export var gravity := 1200
+@export var acceleration := 60
+@export var friction := 20
+@export var air_friction := 10
 
-# double jump
+@export_category("double_jump")
 @export var max_air_jumps := 0
 var used_air_jumps = 0
 
-# glide
+@export_category("glide")
 @export var can_glide := false
 @export var glide_fall_speed := 20.0
 @export var glide_speed_adjust := 1.5
