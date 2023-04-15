@@ -24,8 +24,15 @@ func physics_update(delta) -> void:
 	# variable jump height if jump is released early
 	if Input.is_action_just_released("jump") and player.velocity.y < 0:
 		player.velocity.y = 0
+	
+	# air jump if available
 	if Input.is_action_just_pressed("jump") and (player.used_air_jumps < player.max_air_jumps):
 		state_machine.transition_to("Air", {air_jump = true})
+	
+	# glide if available
+	if Input.is_action_pressed("jump") and (player.used_air_jumps == player.max_air_jumps) and player.can_glide:
+		player.velocity.y = clampf(player.velocity.y, -999999.9, player.glide_fall_speed)
+		player.velocity.x *= 1.5
 	
 	player.move_and_slide()
 	
