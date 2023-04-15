@@ -15,6 +15,7 @@ var used_air_jumps = 0
 # glide
 @export var can_glide := false
 @export var glide_fall_speed := 20.0
+@export var glide_speed_adjust := 1.5
 
 func get_input_direction() -> float:
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

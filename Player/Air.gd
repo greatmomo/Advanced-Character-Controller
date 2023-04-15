@@ -32,7 +32,7 @@ func physics_update(delta) -> void:
 	# glide if available
 	if Input.is_action_pressed("jump") and (player.used_air_jumps == player.max_air_jumps) and player.can_glide:
 		player.velocity.y = clampf(player.velocity.y, -999999.9, player.glide_fall_speed)
-		player.velocity.x *= 1.5
+		player.velocity.x *= player.glide_speed_adjust
 	
 	player.move_and_slide()
 	
