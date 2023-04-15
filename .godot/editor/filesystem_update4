@@ -2,3 +2,6 @@ res://world.tscn
 res://Player/player.gd
 res://Player/player.tscn
 res://Player/Air.gd
+res://PlayerState.gd
+res://State.gd
+res://StateMachine.gd
