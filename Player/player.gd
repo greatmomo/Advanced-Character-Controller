@@ -18,6 +18,12 @@ var used_air_jumps = 0
 @export var glide_fall_speed := 20.0
 @export var glide_speed_adjust := 1.5
 
+@export_category("dash")
+@export var dash_time := 0.1
+@export var dash_velocity := 350
+
+var orientation := 0
+
 func get_input_direction() -> float:
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	
@@ -26,8 +32,14 @@ func get_input_direction() -> float:
 	if direction > 0:
 		$Sprite2D.flip_h = false
 	
+	if abs(direction) > 0:
+		orientation = direction
+	
 	return direction
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
+
+func get_orientation() -> float:
+	return orientation

@@ -33,6 +33,9 @@ func physics_update(delta) -> void:
 		player.velocity.y = clampf(player.velocity.y, -999999.9, player.glide_fall_speed)
 		player.velocity.x *= player.glide_speed_adjust
 	
+	if Input.is_action_just_pressed("dash"):
+		state_machine.transition_to("Dash")
+	
 	player.move_and_slide()
 	
 	if player.is_on_floor():

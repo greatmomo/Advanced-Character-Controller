@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://8hrq84qa87rs"]
+[gd_scene load_steps=14 format=3 uid="uid://8hrq84qa87rs"]
 
 [ext_resource type="Texture2D" uid="uid://dfdg1p73aeia7" path="res://Adventurer Sprite Sheet v1.3.png" id="1_2bolq"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_dmie2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/Idle.gd" id="4_neing"]
 [ext_resource type="Script" path="res://Player/Run.gd" id="5_8gxh0"]
 [ext_resource type="Script" path="res://Player/Air.gd" id="6_aarc7"]
+[ext_resource type="Script" path="res://Player/Dash.gd" id="7_yob74"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxtkj"]
 radius = 7.0
@@ -117,3 +118,6 @@ _animation_player = NodePath("../../AnimationPlayer")
 [node name="Air" type="Node" parent="StateMachine"]
 script = ExtResource("6_aarc7")
 _animation_player = NodePath("../../AnimationPlayer")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("7_yob74")
