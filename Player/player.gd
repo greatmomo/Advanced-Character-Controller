@@ -23,6 +23,9 @@ var used_air_jumps = 0
 @export var dash_velocity := 350
 
 var orientation := 0
+var previous_velocity := Vector2.ZERO
+
+@onready var sprite_2d = $Sprite2D
 
 func get_input_direction() -> float:
 	var direction = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
