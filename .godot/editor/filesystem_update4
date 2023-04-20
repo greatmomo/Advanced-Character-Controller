@@ -1,2 +1,5 @@
-res://Player/player.tscn
+res://world.tscn
 res://Player/player.gd
+res://Player/Air.gd
+res://Player/player.tscn
+res://Player/Run.gd

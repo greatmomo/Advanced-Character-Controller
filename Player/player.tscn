@@ -121,3 +121,4 @@ _animation_player = NodePath("../../AnimationPlayer")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("7_yob74")
+_animation_player = NodePath("../../AnimationPlayer")
