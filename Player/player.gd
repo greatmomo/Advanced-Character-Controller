@@ -27,7 +27,7 @@ var used_air_jumps = 0
 var jump_buffer_timer := 0.0
 
 @export_category("coyote_time")
-@export var coyote_time := 0.5
+@export var coyote_time_val := 0.5
 var coyote_timer := 0.0
 
 var orientation := 0

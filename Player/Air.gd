@@ -7,10 +7,12 @@ func enter(msg := {}) -> void:
 	if msg.has("do_jump"):
 		player.velocity.y = -player.jump_impulse
 		animation_player.play("Jump")
-	if msg.has("air_jump"):
+	elif msg.has("air_jump"):
 		player.velocity.y = -player.jump_impulse
 		animation_player.play("Jump")
 		player.used_air_jumps += 1
+	else:
+		player.coyote_timer = player.coyote_time_val
 
 func physics_update(delta) -> void:
 	if not is_zero_approx(player.get_input_direction()):
@@ -24,8 +26,11 @@ func physics_update(delta) -> void:
 	if Input.is_action_just_released("jump") and player.velocity.y < 0:
 		player.velocity.y = 0
 	
+	# decrement timers
 	if player.jump_buffer_timer > 0.0:
 		player.jump_buffer_timer -= delta
+	if player.coyote_timer > 0.0:
+		player.coyote_timer -= delta
 	
 	# air jump if available, or start jump buffer timer
 	if Input.is_action_just_pressed("jump"):
@@ -34,7 +39,7 @@ func physics_update(delta) -> void:
 		else:
 			player.jump_buffer_timer = player.jump_buffer_time
 			if player.coyote_timer > 0.0:
-					state_machine.transition_to("Air", {air_jump = true})
+					state_machine.transition_to("Air", {do_jump = true})
 	
 	# glide if available
 	if Input.is_action_pressed("jump") and (player.used_air_jumps == player.max_air_jumps) and player.can_glide:

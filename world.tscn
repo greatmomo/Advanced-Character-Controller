@@ -1,25 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk1wfkngei8uo"]
+[gd_scene load_steps=3 format=3 uid="uid://dk1wfkngei8uo"]
 
-[ext_resource type="Texture2D" uid="uid://clx03n21k3ins" path="res://Background.png" id="1_h73ev"]
 [ext_resource type="PackedScene" uid="uid://8hrq84qa87rs" path="res://Player/player.tscn" id="2_wc2tf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2idd"]
-size = Vector2(965, 66)
+[ext_resource type="PackedScene" uid="uid://lqcfwcdvb83x" path="res://platform.tscn" id="3_08awg"]
 
 [node name="World" type="Node"]
-
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(163, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_h73ev")
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(-69, -391)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(280, 595)
-shape = SubResource("RectangleShape2D_m2idd")
 
 [node name="Player" parent="." instance=ExtResource("2_wc2tf")]
 position = Vector2(55, 158)
 glide_fall_speed = 30.0
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(67, 179)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(27, 158)
+rotation = 1.57079
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(203, 179)
+rotation = 1.57079
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(584, 32)
+rotation = 1.57079
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(584, 226)
+rotation = 1.57079
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(-106, 112)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(424, 120)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(424, 234)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(264, 179)
