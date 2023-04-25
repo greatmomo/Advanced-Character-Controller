@@ -12,8 +12,8 @@ func physics_update(delta) -> void:
 		state_machine.transition_to("Air")
 		return
 	
-	player.sprite_2d.scale.y = lerp(player.sprite_2d.scale.y, 1.0, 1 - pow(0.01, delta))
-	player.sprite_2d.scale.x = lerp(player.sprite_2d.scale.x, 1.0, 1 - pow(0.01, delta))
+	player.sprite_2d.scale.y = lerp(player.sprite_2d.scale.y, 0.1, 1 - pow(0.01, delta))
+	player.sprite_2d.scale.x = lerp(player.sprite_2d.scale.x, 0.1, 1 - pow(0.01, delta))
 	
 	player.velocity.x = lerp(player.velocity.x, 0.0, player.friction * delta)
 	player.move_and_slide()

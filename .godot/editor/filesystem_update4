@@ -4,3 +4,4 @@ res://Player/Idle.gd
 res://Player/Run.gd
 res://Player/Dash.gd
 res://Player/Air.gd
+res://platform.tscn

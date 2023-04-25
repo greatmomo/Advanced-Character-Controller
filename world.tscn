@@ -6,8 +6,7 @@
 [node name="World" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("2_wc2tf")]
-position = Vector2(55, 158)
-glide_fall_speed = 30.0
+position = Vector2(74, 154)
 
 [node name="Platforms" type="Node2D" parent="."]
 

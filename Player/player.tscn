@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://8hrq84qa87rs"]
 
-[ext_resource type="Texture2D" uid="uid://dfdg1p73aeia7" path="res://Adventurer Sprite Sheet v1.3.png" id="1_2bolq"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_dmie2"]
+[ext_resource type="Texture2D" uid="uid://dugtlq4l4yql6" path="res://icon.svg" id="2_m8npe"]
 [ext_resource type="Script" path="res://StateMachine.gd" id="3_elk0r"]
 [ext_resource type="Script" path="res://Player/Idle.gd" id="4_neing"]
 [ext_resource type="Script" path="res://Player/Run.gd" id="5_8gxh0"]
@@ -9,20 +9,19 @@
 [ext_resource type="Script" path="res://Player/Dash.gd" id="7_yob74"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxtkj"]
-radius = 7.0
-height = 22.0
+radius = 6.0
+height = 12.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dmie2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -15)
-texture = ExtResource("1_2bolq")
-hframes = 13
-vframes = 13
+position = Vector2(-2.38419e-07, -6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_m8npe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_lxtkj")
 
 [node name="StateMachine" type="Node" parent="."]

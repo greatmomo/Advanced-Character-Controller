@@ -49,8 +49,8 @@ func physics_update(delta) -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	
-	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.75, 1.75)
-	player.sprite_2d.scale.x = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 1.25, 0.75)
+	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.075, 0.175)
+	player.sprite_2d.scale.x = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.125, 0.075)
 	
 	player.move_and_slide()
 	
@@ -59,8 +59,8 @@ func physics_update(delta) -> void:
 			state_machine.transition_to("Air", {do_jump = true})
 		
 		player.used_air_jumps = 0
-		player.sprite_2d.scale.y = remap(abs(player.previous_velocity.y), 0, abs(1700), 0.8, 0.5)
-		player.sprite_2d.scale.x = remap(abs(player.previous_velocity.x), 0, abs(1700), 1.2, 2.0)
+		player.sprite_2d.scale.y = remap(abs(player.previous_velocity.y), 0, abs(1700), 0.08, 0.05)
+		player.sprite_2d.scale.x = remap(abs(player.previous_velocity.x), 0, abs(1700), 0.12, 0.2)
 		if is_zero_approx(player.get_input_direction()):
 			state_machine.transition_to("Idle")
 		else:
