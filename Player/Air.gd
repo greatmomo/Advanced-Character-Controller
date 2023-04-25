@@ -1,15 +1,15 @@
 extends PlayerState
 
-@export var _animation_player : NodePath
-@onready var animation_player:AnimationPlayer = get_node(_animation_player)
+#@export var _animation_player : NodePath
+#@onready var animation_player:AnimationPlayer = get_node(_animation_player)
 
 func enter(msg := {}) -> void:
 	if msg.has("do_jump"):
 		player.velocity.y = -player.jump_impulse
-		animation_player.play("Jump")
+		#animation_player.play("Jump")
 	elif msg.has("air_jump"):
 		player.velocity.y = -player.jump_impulse
-		animation_player.play("Jump")
+		#animation_player.play("Jump")
 		player.used_air_jumps += 1
 	else:
 		player.coyote_timer = player.coyote_time_val

@@ -1,10 +1,11 @@
 extends PlayerState
 
-@export var _animation_player : NodePath
-@onready var animation_player:AnimationPlayer = get_node(_animation_player)
+#@export var _animation_player : NodePath
+#@onready var animation_player:AnimationPlayer = get_node(_animation_player)
 
 func enter(_msg := {}) -> void:
-	animation_player.play("Run")
+	#animation_player.play("Run")
+	pass
 
 func physics_update(delta) -> void:
 	if not player.is_on_floor():

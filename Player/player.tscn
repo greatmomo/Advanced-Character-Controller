@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8hrq84qa87rs"]
+[gd_scene load_steps=9 format=3 uid="uid://8hrq84qa87rs"]
 
 [ext_resource type="Texture2D" uid="uid://dfdg1p73aeia7" path="res://Adventurer Sprite Sheet v1.3.png" id="1_2bolq"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_dmie2"]
@@ -11,79 +11,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxtkj"]
 radius = 7.0
 height = 22.0
-
-[sub_resource type="Animation" id="Animation_dxyye"]
-resource_name = "Idle"
-length = 1.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-}
-
-[sub_resource type="Animation" id="Animation_i7c71"]
-resource_name = "Jump"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [65, 66, 67, 68, 69, 70]
-}
-
-[sub_resource type="Animation" id="Animation_ngx7k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_padfr"]
-resource_name = "Run"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [13, 14, 15, 16, 17, 18, 19, 20]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_asv1h"]
-_data = {
-"Idle": SubResource("Animation_dxyye"),
-"Jump": SubResource("Animation_i7c71"),
-"RESET": SubResource("Animation_ngx7k"),
-"Run": SubResource("Animation_padfr")
-}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dmie2")
@@ -98,27 +25,18 @@ vframes = 13
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_lxtkj")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_asv1h")
-}
-
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_elk0r")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_neing")
-_animation_player = NodePath("../../AnimationPlayer")
 
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("5_8gxh0")
-_animation_player = NodePath("../../AnimationPlayer")
 
 [node name="Air" type="Node" parent="StateMachine"]
 script = ExtResource("6_aarc7")
-_animation_player = NodePath("../../AnimationPlayer")
 
 [node name="Dash" type="Node" parent="StateMachine"]
 script = ExtResource("7_yob74")
-_animation_player = NodePath("../../AnimationPlayer")
