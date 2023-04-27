@@ -17,6 +17,10 @@ position = Vector2(67, 179)
 position = Vector2(27, 158)
 rotation = 1.57079
 
+[node name="Platform10" parent="Platforms" instance=ExtResource("3_08awg")]
+position = Vector2(27, -40)
+rotation = 1.57079
+
 [node name="Platform6" parent="Platforms" instance=ExtResource("3_08awg")]
 position = Vector2(203, 179)
 rotation = 1.57079
@@ -30,7 +34,7 @@ position = Vector2(584, 226)
 rotation = 1.57079
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("3_08awg")]
-position = Vector2(-106, 112)
+position = Vector2(-84, 0)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("3_08awg")]
 position = Vector2(424, 120)
