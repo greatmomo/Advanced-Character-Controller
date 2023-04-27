@@ -49,7 +49,7 @@ func physics_update(delta) -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	
-	if player.is_on_wall():
+	if player.is_on_wall_only() and player.can_wall_jump:
 		state_machine.transition_to("Wall")
 	
 	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.075, 0.175)

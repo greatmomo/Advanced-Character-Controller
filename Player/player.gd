@@ -27,10 +27,11 @@ var used_air_jumps = 0
 var jump_buffer_timer := 0.0
 
 @export_category("coyote_time")
-@export var coyote_time_val := 0.5
+@export var coyote_time_val := 0.1
 var coyote_timer := 0.0
 
 @export_category("wall_jump")
+@export var can_wall_jump := false
 @export var wall_gravity_ratio := 2.0
 @export var wall_jump_distance := 150.0
 
