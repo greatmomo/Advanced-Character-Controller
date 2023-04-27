@@ -31,7 +31,8 @@ var jump_buffer_timer := 0.0
 var coyote_timer := 0.0
 
 @export_category("wall_jump")
-@export var wall_gravity_ratio := 0.2
+@export var wall_gravity_ratio := 2.0
+@export var wall_jump_distance := 150.0
 
 var orientation := 0
 var previous_velocity := Vector2.ZERO
