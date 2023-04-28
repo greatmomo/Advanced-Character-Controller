@@ -34,12 +34,12 @@ func physics_update(delta) -> void:
 	
 	# air jump if available, or start jump buffer timer
 	if Input.is_action_just_pressed("jump"):
-		if (player.used_air_jumps < player.max_air_jumps):
+		if player.coyote_timer > 0.0:
+			state_machine.transition_to("Air", {do_jump = true})
+		elif (player.used_air_jumps < player.max_air_jumps):
 			state_machine.transition_to("Air", {air_jump = true})
 		else:
 			player.jump_buffer_timer = player.jump_buffer_time
-			if player.coyote_timer > 0.0:
-					state_machine.transition_to("Air", {do_jump = true})
 	
 	# glide if available
 	if Input.is_action_pressed("jump") and (player.used_air_jumps == player.max_air_jumps) and player.can_glide:
@@ -49,7 +49,8 @@ func physics_update(delta) -> void:
 	if Input.is_action_just_pressed("dash"):
 		state_machine.transition_to("Dash")
 	
-	if player.is_on_wall_only() and player.can_wall_jump:
+	if player.is_on_wall_only() and player.can_wall_jump and player.velocity.y >= 0.0:
+		player.used_air_jumps = 0
 		state_machine.transition_to("Wall")
 	
 	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.075, 0.175)

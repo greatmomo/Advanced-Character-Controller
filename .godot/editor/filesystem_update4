@@ -1,6 +1,3 @@
 res://world.tscn
-res://Player/Wall.gd
 res://Player/Air.gd
-res://StateMachine.gd
-res://Player/player.tscn
-res://Player/player.gd
+res://Player/Wall.gd
