@@ -1,4 +1,2 @@
 res://world.tscn
-res://Player/Air.gd
-res://Player/Wall.gd
-res://world.gd
+res://Player/player.tscn

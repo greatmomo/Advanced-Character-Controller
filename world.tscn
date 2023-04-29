@@ -52,7 +52,6 @@ position = Vector2(264, 179)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="UIContainer" type="MarginContainer" parent="UI"]
-visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 211.0
@@ -72,6 +71,7 @@ layout_mode = 2
 
 [node name="WallJumpLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 10
 text = "Wall Jump"
 
 [node name="WallJump" type="CheckButton" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
@@ -110,6 +110,59 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Speed"
+
+[node name="Speed" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+min_value = 20.0
+max_value = 200.0
+step = 10.0
+value = 80.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="AccelerationLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+text = "Acceleration"
+
+[node name="Acceleration" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+min_value = 20.0
+max_value = 200.0
+step = 10.0
+value = 60.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="JumpStrengthLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+text = "Jump Strength"
+
+[node name="JumpStrength" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+min_value = 100.0
+max_value = 800.0
+step = 10.0
+value = 400.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="GravityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+text = "Gravity"
+
+[node name="Gravity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
+layout_mode = 2
+min_value = 100.0
+max_value = 2000.0
+step = 50.0
+value = 1200.0
 
 [node name="InfoTextContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 5
