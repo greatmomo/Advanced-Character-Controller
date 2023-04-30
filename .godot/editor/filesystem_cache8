@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1682776900
+::res://::1682861866
 Adventurer Sprite Sheet v1.3.png::CompressedTexture2D::7516810973686122336::1681326989::1681326989::1::::<><>::
 Background.png::CompressedTexture2D::5593967988505497580::1681326954::1681326954::1::::<><>::
 icon.svg::CompressedTexture2D::8576599342672262149::1681326881::1681326891::1::::<><>::
@@ -8,12 +8,12 @@ PlayerState.gd::GDScript::-1::1681568421::0::1::::PlayerState<>State<>::
 State.gd::GDScript::-1::1681568421::0::1::::State<>Node<>::
 StateMachine.gd::GDScript::-1::1682622420::0::1::::StateMachine<>Node<>::
 world.gd::GDScript::-1::1682690398::0::1::::<>Node<>::
-world.tscn::PackedScene::7916169557469837882::1682690414::0::1::::<><>::res://world.gd<>uid://8hrq84qa87rs<>uid://lqcfwcdvb83x
-::res://Player/::1682688523
+world.tscn::PackedScene::7916169557469837882::1682777318::0::1::::<><>::res://world.gd<>uid://8hrq84qa87rs<>uid://lqcfwcdvb83x
+::res://Player/::1682777268
 Air.gd::GDScript::-1::1682688517::0::1::::<>PlayerState<>::
 Dash.gd::GDScript::-1::1682449560::0::1::::<>PlayerState<>::
 Idle.gd::GDScript::-1::1682449900::0::1::::<>PlayerState<>::
 player.gd::GDScript::-1::1682623181::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::2331745024711179548::1682623204::0::1::::<><>::res://Player/player.gd<>uid://dugtlq4l4yql6<>res://StateMachine.gd<>res://Player/Idle.gd<>res://Player/Run.gd<>res://Player/Air.gd<>res://Player/Wall.gd<>res://Player/Dash.gd
+player.tscn::PackedScene::2331745024711179548::1682777268::0::1::::<><>::res://Player/player.gd<>uid://dugtlq4l4yql6<>res://StateMachine.gd<>res://Player/Idle.gd<>res://Player/Run.gd<>res://Player/Air.gd<>res://Player/Wall.gd<>res://Player/Dash.gd
 Run.gd::GDScript::-1::1682449871::0::1::::<>PlayerState<>::
 Wall.gd::GDScript::-1::1682688523::0::1::::<>PlayerState<>::
