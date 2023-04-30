@@ -12,6 +12,7 @@ script = ExtResource("1_bjppt")
 
 [node name="Player" parent="." instance=ExtResource("2_wc2tf")]
 position = Vector2(74, 154)
+can_dash = true
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -64,30 +65,140 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/UIContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
+[node name="Basic Movement" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
 layout_mode = 2
 
-[node name="WallJumpLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="SpeedLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Speed"
+
+[node name="Speed" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 20.0
+max_value = 200.0
+step = 10.0
+value = 80.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
+layout_mode = 2
+
+[node name="AccelerationLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Acceleration"
+
+[node name="Acceleration" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 20.0
+max_value = 200.0
+step = 10.0
+value = 60.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
+layout_mode = 2
+
+[node name="JumpStrengthLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Jump Strength"
+
+[node name="JumpStrength" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 100.0
+max_value = 800.0
+step = 10.0
+value = 400.0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
+layout_mode = 2
+
+[node name="GravityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Gravity"
+
+[node name="Gravity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 100.0
+max_value = 2000.0
+step = 50.0
+value = 1200.0
+
+[node name="Movement + Air Jumps" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps"]
+layout_mode = 2
+
+[node name="FrictionLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Friction"
+
+[node name="Friction" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 1.0
+value = 20.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps"]
+layout_mode = 2
+
+[node name="AirFrictionLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Air Friction"
+
+[node name="AirFriction" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 1.0
+value = 10.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps"]
+layout_mode = 2
+
+[node name="AirJumpsLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Max Air Jumps"
+
+[node name="MaxAirJumps" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+
+[node name="Wall Jump" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump"]
+layout_mode = 2
+
+[node name="WallJumpLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 text = "Wall Jump"
 
-[node name="WallJump" type="CheckButton" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="WallJump" type="CheckButton" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e7cka")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump"]
 layout_mode = 2
 
-[node name="WallGravityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="WallGravityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 text = "Wall Gravity"
 
-[node name="WallGravity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="WallGravity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 min_value = 0.5
@@ -95,83 +206,20 @@ max_value = 6.0
 step = 0.5
 value = 2.0
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump"]
 layout_mode = 2
 
-[node name="WallJumpDistanceLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="WallJumpDistanceLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 text = "Wall Jump Distance"
 
-[node name="WallJumpDistance" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3"]
+[node name="WallJumpDistance" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 max_value = 500.0
 step = 10.0
 value = 150.0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="SpeedLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_ixx57")
-text = "Speed"
-
-[node name="Speed" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-min_value = 20.0
-max_value = 200.0
-step = 10.0
-value = 80.0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="AccelerationLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-theme = ExtResource("4_ixx57")
-text = "Acceleration"
-
-[node name="Acceleration" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer3"]
-layout_mode = 2
-min_value = 20.0
-max_value = 200.0
-step = 10.0
-value = 60.0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="JumpStrengthLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-theme = ExtResource("4_ixx57")
-text = "Jump Strength"
-
-[node name="JumpStrength" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
-layout_mode = 2
-min_value = 100.0
-max_value = 800.0
-step = 10.0
-value = 400.0
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="GravityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-theme = ExtResource("4_ixx57")
-text = "Gravity"
-
-[node name="Gravity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer4"]
-layout_mode = 2
-min_value = 100.0
-max_value = 2000.0
-step = 50.0
-value = 1200.0
 
 [node name="InfoTextContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 5
@@ -186,6 +234,13 @@ grow_horizontal = 2
 layout_mode = 2
 text = "Press Tab for options"
 
-[connection signal="pressed" from="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/WallJump" to="." method="_on_wall_jump_pressed"]
-[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/WallGravity" to="." method="_on_wall_gravity_value_changed"]
-[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3/WallJumpDistance" to="." method="_on_wall_jump_distance_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer/Speed" to="." method="_on_speed_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3/Acceleration" to="." method="_on_acceleration_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer2/JumpStrength" to="." method="_on_jump_strength_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer4/Gravity" to="." method="_on_gravity_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer/Friction" to="." method="_on_friction_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3/AirFriction" to="." method="_on_air_friction_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2/MaxAirJumps" to="." method="_on_max_air_jumps_value_changed"]
+[connection signal="pressed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer/WallJump" to="." method="_on_wall_jump_pressed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2/WallGravity" to="." method="_on_wall_gravity_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3/WallJumpDistance" to="." method="_on_wall_jump_distance_value_changed"]

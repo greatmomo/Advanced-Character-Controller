@@ -13,15 +13,6 @@ class_name Player
 @export var max_air_jumps := 0
 var used_air_jumps = 0
 
-@export_category("glide")
-@export var can_glide := false
-@export var glide_fall_speed := 20.0
-@export var glide_speed_adjust := 1.5
-
-@export_category("dash")
-@export var dash_time := 0.1
-@export var dash_velocity := 350
-
 @export_category("jump_buffer")
 @export var jump_buffer_time := 0.1
 var jump_buffer_timer := 0.0
@@ -34,6 +25,16 @@ var coyote_timer := 0.0
 @export var can_wall_jump := false
 @export var wall_gravity_ratio := 2.0
 @export var wall_jump_distance := 150.0
+
+@export_category("glide")
+@export var can_glide := false
+@export var glide_fall_speed := 20.0
+@export var glide_speed_adjust := 1.5
+
+@export_category("dash")
+@export var can_dash := false
+@export var dash_time := 0.1
+@export var dash_velocity := 350
 
 var orientation := 0
 var previous_velocity := Vector2.ZERO

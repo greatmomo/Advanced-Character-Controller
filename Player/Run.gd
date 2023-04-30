@@ -23,7 +23,7 @@ func physics_update(delta) -> void:
 	
 	if Input.is_action_just_pressed("jump"):
 		state_machine.transition_to("Air", {do_jump = true})
-	elif Input.is_action_just_pressed("dash"):
+	elif Input.is_action_just_pressed("dash") and player.can_dash:
 		state_machine.transition_to("Dash")
 	elif is_zero_approx(player.get_input_direction()):
 		state_machine.transition_to("Idle")

@@ -5,9 +5,16 @@ extends Node
 @onready var ui_container = $UI/UIContainer
 @onready var info_text_container = $UI/InfoTextContainer
 
-@onready var wall_jump = $UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer/WallJump
-@onready var wall_gravity = $UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/WallGravity
-@onready var wall_jump_distance = $UI/UIContainer/PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer3/WallJumpDistance
+@onready var speed = $"UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer/Speed"
+@onready var acceleration = $"UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3/Acceleration"
+@onready var jump_strength = $"UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer2/JumpStrength"
+@onready var gravity = $"UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer4/Gravity"
+@onready var friction = $"UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer/Friction"
+@onready var air_friction = $"UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3/AirFriction"
+@onready var max_air_jumps = $"UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2/MaxAirJumps"
+@onready var wall_jump = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer/WallJump"
+@onready var wall_gravity = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2/WallGravity"
+@onready var wall_jump_distance = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3/WallJumpDistance"
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("show_ui"):
@@ -29,3 +36,24 @@ func _on_wall_gravity_value_changed(value):
 
 func _on_wall_jump_distance_value_changed(value):
 	player.wall_jump_distance = wall_jump_distance.get_value()
+
+func _on_speed_value_changed(value):
+	player.speed = speed.get_value()
+
+func _on_acceleration_value_changed(value):
+	player.acceleration = acceleration.get_value()
+
+func _on_jump_strength_value_changed(value):
+	player.jump_impulse = jump_strength.get_value()
+
+func _on_gravity_value_changed(value):
+	player.gravity = gravity.get_value()
+
+func _on_friction_value_changed(value):
+	player.friction = friction.get_value()
+
+func _on_air_friction_value_changed(value):
+	player.air_friction = air_friction.get_value()
+
+func _on_max_air_jumps_value_changed(value):
+	player.max_air_jumps = max_air_jumps.get_value()
