@@ -36,7 +36,7 @@ var coyote_timer := 0.0
 @export var dash_time := 0.1
 @export var dash_velocity := 350
 
-var orientation := 0
+var orientation := 1.0
 var previous_velocity := Vector2.ZERO
 
 @onready var sprite_2d = $Sprite2D

@@ -15,6 +15,9 @@ extends Node
 @onready var wall_jump = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer/WallJump"
 @onready var wall_gravity = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2/WallGravity"
 @onready var wall_jump_distance = $"UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3/WallJumpDistance"
+@onready var dash = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer/Dash
+@onready var dash_time = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer2/DashTime
+@onready var dash_velocity = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3/DashVelocity
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("show_ui"):
@@ -57,3 +60,15 @@ func _on_air_friction_value_changed(value):
 
 func _on_max_air_jumps_value_changed(value):
 	player.max_air_jumps = max_air_jumps.get_value()
+
+func _on_dash_pressed():
+	if dash.is_pressed():
+		player.can_dash = true
+	else:
+		player.can_dash = false
+
+func _on_dash_time_value_changed(value):
+	player.dash_time = dash_time.get_value()
+
+func _on_dash_velocity_value_changed(value):
+	player.dash_velocity = dash_velocity.get_value()

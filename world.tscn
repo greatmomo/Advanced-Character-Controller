@@ -221,6 +221,53 @@ max_value = 500.0
 step = 10.0
 value = 150.0
 
+[node name="Dash" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash"]
+layout_mode = 2
+
+[node name="DashLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Dash"
+
+[node name="Dash" type="CheckButton" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e7cka")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash"]
+layout_mode = 2
+
+[node name="DashTimeLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Dash Time"
+
+[node name="DashTime" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash"]
+layout_mode = 2
+
+[node name="DashVelocityLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Dash Velocity"
+
+[node name="DashVelocity" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 10.0
+max_value = 1000.0
+step = 10.0
+value = 350.0
+
 [node name="InfoTextContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -244,3 +291,6 @@ text = "Press Tab for options"
 [connection signal="pressed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer/WallJump" to="." method="_on_wall_jump_pressed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2/WallGravity" to="." method="_on_wall_gravity_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3/WallJumpDistance" to="." method="_on_wall_jump_distance_value_changed"]
+[connection signal="pressed" from="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer/Dash" to="." method="_on_dash_pressed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer2/DashTime" to="." method="_on_dash_time_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3/DashVelocity" to="." method="_on_dash_velocity_value_changed"]
