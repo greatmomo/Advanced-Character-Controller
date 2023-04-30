@@ -12,7 +12,6 @@ script = ExtResource("1_bjppt")
 
 [node name="Player" parent="." instance=ExtResource("2_wc2tf")]
 position = Vector2(74, 154)
-can_dash = true
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -175,6 +174,41 @@ text = "Max Air Jumps"
 layout_mode = 2
 theme = ExtResource("4_ixx57")
 
+[node name="Advanced Jumps" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps"]
+layout_mode = 2
+
+[node name="CoyoteTimeLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Coyote Time"
+
+[node name="CoyoteTime" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 0.01
+max_value = 5.0
+step = 0.01
+value = 0.1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps"]
+layout_mode = 2
+
+[node name="JumpBufferLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Jump Buffer Time"
+
+[node name="JumpBufferTime" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 0.01
+max_value = 5.0
+step = 0.01
+value = 0.1
+
 [node name="Wall Jump" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -288,6 +322,8 @@ text = "Press Tab for options"
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer/Friction" to="." method="_on_friction_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3/AirFriction" to="." method="_on_air_friction_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2/MaxAirJumps" to="." method="_on_max_air_jumps_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer/CoyoteTime" to="." method="_on_coyote_time_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer3/JumpBufferTime" to="." method="_on_jump_buffer_time_value_changed"]
 [connection signal="pressed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer/WallJump" to="." method="_on_wall_jump_pressed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer2/WallGravity" to="." method="_on_wall_gravity_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Wall Jump/HBoxContainer3/WallJumpDistance" to="." method="_on_wall_jump_distance_value_changed"]

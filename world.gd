@@ -18,6 +18,8 @@ extends Node
 @onready var dash = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer/Dash
 @onready var dash_time = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer2/DashTime
 @onready var dash_velocity = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3/DashVelocity
+@onready var coyote_time = $"UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer/CoyoteTime"
+@onready var jump_buffer_time = $"UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer3/JumpBufferTime"
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("show_ui"):
@@ -72,3 +74,9 @@ func _on_dash_time_value_changed(value):
 
 func _on_dash_velocity_value_changed(value):
 	player.dash_velocity = dash_velocity.get_value()
+
+func _on_coyote_time_value_changed(value):
+	player.coyote_time_val = coyote_time.get_value()
+
+func _on_jump_buffer_time_value_changed(value):
+	player.jump_buffer_time = jump_buffer_time.get_value()
