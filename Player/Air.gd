@@ -44,7 +44,8 @@ func physics_update(delta) -> void:
 	# glide if available
 	if Input.is_action_pressed("jump") and (player.used_air_jumps == player.max_air_jumps) and player.can_glide:
 		player.velocity.y = clampf(player.velocity.y, -999999.9, player.glide_fall_speed)
-		player.velocity.x *= player.glide_speed_adjust
+		if not is_zero_approx(player.get_input_direction()):
+			player.velocity.x *= player.glide_speed_adjust
 	
 	if Input.is_action_just_pressed("dash") and player.can_dash:
 		state_machine.transition_to("Dash")

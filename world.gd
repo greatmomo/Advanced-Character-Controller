@@ -20,6 +20,9 @@ extends Node
 @onready var dash_velocity = $UI/UIContainer/PanelContainer/VBoxContainer/Dash/HBoxContainer3/DashVelocity
 @onready var coyote_time = $"UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer/CoyoteTime"
 @onready var jump_buffer_time = $"UI/UIContainer/PanelContainer/VBoxContainer/Advanced Jumps/HBoxContainer3/JumpBufferTime"
+@onready var glide = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer/Glide
+@onready var glide_fall_speed = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer2/GlideFallSpeed
+@onready var glide_speed_adjust = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer3/GlideSpeedAdjust
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("show_ui"):
@@ -80,3 +83,15 @@ func _on_coyote_time_value_changed(value):
 
 func _on_jump_buffer_time_value_changed(value):
 	player.jump_buffer_time = jump_buffer_time.get_value()
+
+func _on_glide_pressed():
+	if glide.is_pressed():
+		player.can_glide = true
+	else:
+		player.can_glide = false
+
+func _on_glide_fall_speed_value_changed(value):
+	player.glide_fall_speed = glide_fall_speed.get_value()
+
+func _on_glide_speed_adjust_value_changed(value):
+	player.glide_speed_adjust = glide_speed_adjust.get_value()
