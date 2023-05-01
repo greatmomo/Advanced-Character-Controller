@@ -6,8 +6,8 @@ class_name Player
 @export var jump_impulse := 400
 @export var gravity := 1200
 @export var acceleration := 60
-@export var friction := 20
-@export var air_friction := 10
+@export var friction := 13
+@export var air_friction := 4
 
 @export_category("double_jump")
 @export var max_air_jumps := 0
