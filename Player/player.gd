@@ -5,7 +5,7 @@ class_name Player
 @export var speed := 80
 @export var jump_impulse := 400
 @export var gravity := 1200
-@export var acceleration := 60
+@export var acceleration := 20 # accel and friction = 2 for ice
 @export var friction := 13
 @export var air_friction := 4
 

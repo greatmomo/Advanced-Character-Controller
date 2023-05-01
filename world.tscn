@@ -101,10 +101,8 @@ text = "Acceleration"
 [node name="Acceleration" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3"]
 layout_mode = 2
 theme = ExtResource("4_ixx57")
-min_value = 20.0
-max_value = 200.0
-step = 10.0
-value = 60.0
+min_value = 1.0
+value = 20.0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
 layout_mode = 2
