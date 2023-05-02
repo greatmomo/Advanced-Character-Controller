@@ -5,7 +5,7 @@ class_name Player
 @export var speed := 80 # speed 20 and jump 200 for mud effect
 @export var jump_impulse := 400
 @export var gravity := 1200
-@export var acceleration := 20 # accel and friction = 2 for ice
+@export var acceleration := 20 # accel and friction = 2, speed 150 for ice effect
 @export var friction := 13
 @export var air_friction := 4
 
@@ -33,8 +33,8 @@ var coyote_timer := 0.0
 
 @export_category("glide")
 @export var can_glide := false
-@export var glide_fall_speed := 20.0
-@export var glide_speed_adjust := 1.5
+@export var glide_fall_speed := 25.0
+@export var glide_speed_adjust := 1.3
 
 var orientation := 1.0
 var previous_velocity := Vector2.ZERO

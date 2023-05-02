@@ -40,31 +40,31 @@ func _on_wall_jump_pressed():
 		player.can_wall_jump = false
 
 func _on_wall_gravity_value_changed(value):
-	player.wall_gravity_ratio = wall_gravity.get_value()
+	player.wall_gravity_ratio = value
 
 func _on_wall_jump_distance_value_changed(value):
-	player.wall_jump_distance = wall_jump_distance.get_value()
+	player.wall_jump_distance = value
 
 func _on_speed_value_changed(value):
-	player.speed = speed.get_value()
+	player.speed = value
 
 func _on_acceleration_value_changed(value):
-	player.acceleration = acceleration.get_value()
+	player.acceleration = value
 
 func _on_jump_strength_value_changed(value):
-	player.jump_impulse = jump_strength.get_value()
+	player.jump_impulse = value
 
 func _on_gravity_value_changed(value):
-	player.gravity = gravity.get_value()
+	player.gravity = value
 
 func _on_friction_value_changed(value):
-	player.friction = friction.get_value()
+	player.friction = value
 
 func _on_air_friction_value_changed(value):
-	player.air_friction = air_friction.get_value()
+	player.air_friction = value
 
 func _on_max_air_jumps_value_changed(value):
-	player.max_air_jumps = max_air_jumps.get_value()
+	player.max_air_jumps =value
 
 func _on_dash_pressed():
 	if dash.is_pressed():
@@ -73,16 +73,16 @@ func _on_dash_pressed():
 		player.can_dash = false
 
 func _on_dash_time_value_changed(value):
-	player.dash_time = dash_time.get_value()
+	player.dash_time = value
 
 func _on_dash_velocity_value_changed(value):
-	player.dash_velocity = dash_velocity.get_value()
+	player.dash_velocity = value
 
 func _on_coyote_time_value_changed(value):
-	player.coyote_time_val = coyote_time.get_value()
+	player.coyote_time_val = value
 
 func _on_jump_buffer_time_value_changed(value):
-	player.jump_buffer_time = jump_buffer_time.get_value()
+	player.jump_buffer_time = value
 
 func _on_glide_pressed():
 	if glide.is_pressed():
@@ -91,7 +91,7 @@ func _on_glide_pressed():
 		player.can_glide = false
 
 func _on_glide_fall_speed_value_changed(value):
-	player.glide_fall_speed = glide_fall_speed.get_value()
+	player.glide_fall_speed = value
 
 func _on_glide_speed_adjust_value_changed(value):
-	player.glide_speed_adjust = glide_speed_adjust.get_value()
+	player.glide_speed_adjust = value
