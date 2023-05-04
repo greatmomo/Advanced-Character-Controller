@@ -4,10 +4,10 @@ The purpose of this project is to have a place to test character controller mech
 This allows repurposing of a generalized controller for various projects with minor tweaks.
 
 Default controls are as follows:
-Movement 	-	WASD
-Jump 		- 	Spacebar (release cancels jump)
-Dash		-	Left Ctrl
-Glide		-	Hold Spacebar (after last air jump)
+- Movement  -	WASD
+- Jump      - Spacebar (release cancels jump)
+- Dash		  -	Left Ctrl
+- Glide		  -	Hold Spacebar (after last air jump)
 
 Adjustable features include:
 - Movement (speed, acceleration, friction)
