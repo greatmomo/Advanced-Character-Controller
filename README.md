@@ -8,6 +8,7 @@ Default controls are as follows:
 - Jump      - Spacebar (release cancels jump)
 - Dash		  -	Left Ctrl
 - Glide		  -	Hold Spacebar (after last air jump)
+- Options   - Hold Tab
 
 Adjustable features include:
 - Movement (speed, acceleration, friction)
