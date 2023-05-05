@@ -54,8 +54,8 @@ func physics_update(delta) -> void:
 		player.used_air_jumps = 0
 		state_machine.transition_to("Wall")
 	
-	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.075, 0.175)
-	player.sprite_2d.scale.x = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.125, 0.075)
+	player.sprite_2d.scale.y = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 0.75 * player.player_scale, 1.75 * player.player_scale)
+	player.sprite_2d.scale.x = remap(abs(player.velocity.y), 0, abs(player.jump_impulse), 1.25 * player.player_scale, 0.75 * player.player_scale)
 	
 	player.move_and_slide()
 	
@@ -64,8 +64,8 @@ func physics_update(delta) -> void:
 			state_machine.transition_to("Air", {do_jump = true})
 		
 		player.used_air_jumps = 0
-		player.sprite_2d.scale.y = remap(abs(player.previous_velocity.y), 0, abs(1700), 0.08, 0.05)
-		player.sprite_2d.scale.x = remap(abs(player.previous_velocity.x), 0, abs(1700), 0.12, 0.2)
+		player.sprite_2d.scale.y = remap(abs(player.previous_velocity.y), 0, abs(1700), 0.8 * player.player_scale, 0.5 * player.player_scale)
+		player.sprite_2d.scale.x = remap(abs(player.previous_velocity.x), 0, abs(1700), 1.2 * player.player_scale, 2.0 * player.player_scale)
 		if is_zero_approx(player.get_input_direction()):
 			state_machine.transition_to("Idle")
 		else:

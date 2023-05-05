@@ -16,8 +16,8 @@ func physics_update(delta) -> void:
 	
 	player.velocity.y = player.gravity * delta * player.wall_gravity_ratio
 	
-	player.sprite_2d.scale.y = lerp(player.sprite_2d.scale.y, 0.1, 1 - pow(0.01, delta))
-	player.sprite_2d.scale.x = lerp(player.sprite_2d.scale.x, 0.1, 1 - pow(0.01, delta))
+	player.sprite_2d.scale.y = lerp(player.sprite_2d.scale.y, 1.0 * player.player_scale, 1 - pow(0.1 * player.player_scale, delta))
+	player.sprite_2d.scale.x = lerp(player.sprite_2d.scale.x, 1.0 * player.player_scale, 1 - pow(0.1 * player.player_scale, delta))
 	
 	# jump off wall
 	if Input.is_action_just_pressed("jump"):
