@@ -23,6 +23,7 @@ extends Node
 @onready var glide = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer/Glide
 @onready var glide_fall_speed = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer2/GlideFallSpeed
 @onready var glide_speed_adjust = $UI/UIContainer/PanelContainer/VBoxContainer/Glide/HBoxContainer3/GlideSpeedAdjust
+@onready var max_fall_speed = $"UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer4/MaxFallSpeed"
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed("show_ui"):
@@ -95,3 +96,6 @@ func _on_glide_fall_speed_value_changed(value):
 
 func _on_glide_speed_adjust_value_changed(value):
 	player.glide_speed_adjust = value
+
+func _on_max_fall_speed_value_changed(value):
+	player.max_fall_speed = value

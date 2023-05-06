@@ -143,6 +143,21 @@ value = 1200.0
 [node name="Movement + Air Jumps" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps"]
+layout_mode = 2
+
+[node name="MaxFallSpeedLabel" type="Label" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+text = "Max Fall Speed"
+
+[node name="MaxFallSpeed" type="SpinBox" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer4"]
+layout_mode = 2
+theme = ExtResource("4_ixx57")
+min_value = 1.0
+max_value = 1000.0
+value = 500.0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps"]
 layout_mode = 2
 
@@ -372,6 +387,7 @@ text = "Press Tab for options"
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer3/Acceleration" to="." method="_on_acceleration_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer2/JumpStrength" to="." method="_on_jump_strength_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement/HBoxContainer4/Gravity" to="." method="_on_gravity_value_changed"]
+[connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer4/MaxFallSpeed" to="." method="_on_max_fall_speed_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer/Friction" to="." method="_on_friction_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer3/AirFriction" to="." method="_on_air_friction_value_changed"]
 [connection signal="value_changed" from="UI/UIContainer/PanelContainer/VBoxContainer/Movement + Air Jumps/HBoxContainer2/MaxAirJumps" to="." method="_on_max_air_jumps_value_changed"]
