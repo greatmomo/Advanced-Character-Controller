@@ -1,6 +1,3 @@
 res://world.tscn
 res://Player/player.gd
 res://Player/Air.gd
-res://Player/Idle.gd
-res://Player/Run.gd
-res://Player/Wall.gd

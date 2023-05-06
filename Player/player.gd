@@ -10,6 +10,7 @@ class_name Player
 @export var acceleration := 20 # accel and friction = 2, speed 150 for ice effect
 @export var friction := 13
 @export var air_friction := 4
+@export var max_fall_speed := 500
 
 @export_category("double_jump")
 @export var max_air_jumps := 0
