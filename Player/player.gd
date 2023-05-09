@@ -4,7 +4,7 @@ class_name Player
 @export var player_scale := 0.1
 
 @export_category("movement")
-@export var speed := 80 # speed 20 and jump 200 for mud effect
+@export var speed := 120 # speed 20 and jump 200 for mud effect
 @export var jump_impulse := 400
 @export var gravity := 1200
 @export var acceleration := 20 # accel and friction = 2, speed 150 for ice effect

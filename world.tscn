@@ -92,7 +92,7 @@ theme = ExtResource("4_ixx57")
 min_value = 20.0
 max_value = 200.0
 step = 10.0
-value = 80.0
+value = 120.0
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/UIContainer/PanelContainer/VBoxContainer/Basic Movement"]
 layout_mode = 2

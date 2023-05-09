@@ -1,3 +1,4 @@
 res://world.tscn
 res://Player/Run.gd
 res://Player/Dash.gd
+res://Player/player.gd
