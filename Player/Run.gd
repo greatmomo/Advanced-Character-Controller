@@ -8,10 +8,6 @@ func enter(_msg := {}) -> void:
 	pass
 
 func physics_update(delta) -> void:
-	if not player.is_on_floor():
-		state_machine.transition_to("Air")
-		return
-	
 	player.sprite_2d.scale.y = lerp(player.sprite_2d.scale.y, 1.0 * player.player_scale, 1 - pow(0.1 * player.player_scale, delta))
 	player.sprite_2d.scale.x = lerp(player.sprite_2d.scale.x, 1.0 * player.player_scale, 1 - pow(0.1 * player.player_scale, delta))
 	
@@ -21,7 +17,9 @@ func physics_update(delta) -> void:
 	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
 	
-	if Input.is_action_just_pressed("jump"):
+	if not player.is_on_floor():
+		state_machine.transition_to("Air")
+	elif Input.is_action_just_pressed("jump"):
 		state_machine.transition_to("Air", {do_jump = true})
 	elif Input.is_action_just_pressed("dash") and player.can_dash:
 		state_machine.transition_to("Dash")
